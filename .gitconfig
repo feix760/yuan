@@ -1,0 +1,22 @@
+[user]
+	name = yuanfeixiang
+	email = feix760@gmail.com
+[push]
+	default = matching
+[alias]
+	co = checkout
+	ci = commit
+	st = status -s
+    br = branch
+    l = log --stat --abbrev-commit
+    lone =log --pretty=oneline
+
+[http]
+[https]
+[core]
+	filemode = false
+	autocrlf = false
+[branch]
+	autosetuprebase = always
+[http]
+[https]
