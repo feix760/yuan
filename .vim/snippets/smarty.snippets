@@ -1,0 +1,35 @@
+snippet nbs
+	&nbsp;
+snippet html
+	<!DOCTYPE html>
+	<html lang="ch">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		${0}
+	</body>
+	</html>
+snippet link:css
+	<link rel="stylesheet" href="${0}" />
+snippet script:link
+	<script src="${0}"></script>
+snippet script:text
+	<script type="text/html" id="${0}"></script>
+snippet %
+	<% ${0} %>
+snippet =
+	<%= ${0} %>
+snippet %{
+	<% ${1} { %>
+		${0}
+	<% } %>
+snippet if
+	<% if (${1}) { %>
+		${0}
+	<% } %>
+snippet else
+	<% } else { %>
+snippet elseif
+	<% } else if (${0}) { %>

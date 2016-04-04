@@ -1,202 +1,265 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'vim-scripts/L9'
+Plugin 'majutsushi/tagbar' " taglist
+Plugin 'groenewege/vim-less'
+Plugin 'mattn/emmet-vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ivalkeen/nerdtree-execute'
+Plugin 'scrooloose/nerdcommenter' " comment code
+Plugin 'godlygeek/tabular' " algin cols
+Plugin 'SirVer/ultisnips'
+Plugin 'walm/jshint.vim'
+Plugin 'tpope/vim-fugitive' " git
+Plugin 'juneedahamed/svnj.vim' " svn
+Plugin 'yssl/QFEnter' " quickfix
+Plugin 'feix760/autospace.vim'
+Plugin 'feix760/taboo.vim'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'othree/html5-syntax.vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'isRuslan/vim-es6'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'feix760/css3complete.vim'
+Plugin 'ashisha/image.vim'
+Plugin 'Valloric/YouCompleteMe'
+call vundle#end()
+filetype plugin indent on
+
+set completeopt-=preview
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+let g:ycm_auto_trigger = 0
+let g:ycm_key_invoke_completion = '<C-N>'
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+let g:autoformat_verbosemode = 1
+
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_no_default_key_mappings = 1
+
 let mapleader = ","
 let g:mapleader = ","
-let g:netrw_winsize=20
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-set cursorline
-nmap yx yydd
-nmap <leader>w :w!<cr>
-nmap <leader><s-w> :wa!<cr>
-nmap <leader>q :q!<cr>
-nmap <leader><s-q> :qa!<cr>
-nmap <leader>wq :w!<cr>:qa!<cr>
-nmap <leader>g  <c-w>
-nmap <leader>b <c-w>b
-nmap <leader><s-b> :NERDTree<cr>
-nmap gj 10j
-nmap gk 10k
+nn \ ,
 
-let g:NERDTreeWinSize = 20 
-"au VIMEnter * call OpenNERDTree()
-function OpenNERDTree()
-    :NERDTree
-    wincmd w
-endfunction
+com! Sdiff SVNDiff
+com! Sblame SVNBlame
 
+let g:taboo_tab_format = ' %N%m %s '
+let g:taboo_modified_tab_flag = '+'
+
+let g:snips_author = 'fishineyuan'
+let g:snips_mail = 'fishineyuan@tencent.com'
+
+let g:qfenter_open_map = ['<CR>', 'o']
+let g:qfenter_vopen_map = ['<C-v>']
+let g:qfenter_hopen_map = ['<C-x>']
+let g:qfenter_topen_map = ['<C-t>']
+
+let g:NERDTreeWinSize = 20
+
+nn <leader>n :NERDTreeToggle<cr>
+
+let g:tagbar_type_javascript = {
+     \ 'ctagsbin': '/usr/local/bin/jsctags'
+     \ }
+nn <leader>t :TagbarToggle<cr>
+
+let g:ctrlp_map = '<c-u>'
+let g:ctrlp_working_path_mode = 'w'
+let g:ctrlp_custom_ignore = {
+     \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|dev)$',
+     \ 'file': '\v\.(exe|so|dll)$',
+     \ 'link': 'some_bad_symbolic_links',
+     \ }
+
+vn <leader>a;  :Tabularize /^[^:]*\zs:<cr>
+vn <leader>a=  :Tabularize /^[^=]*\zs=<cr>
+
+set diffopt=vertical
+
+let g:user_emmet_settings = {
+    \ 'variables': {
+    \   'lang': "zh_CN",
+    \   'locale': "zh_CN"
+    \ },
+    \ 'html' : {
+    \     'default_attributes': {
+    \         'script': [],
+    \         'button': [{'type': 'button'}]
+    \     }
+    \ }
+    \ }
+
+runtime macros/matchit.vim
 syntax enable
-colorscheme desert
-set showcmd
+set synmaxcol=400 " prevent slow when a line is too long
 set background=dark
+colorscheme desert
+set hidden
+set cursorline
+set showcmd
 set number
 set history=700
 filetype plugin on
 filetype indent on
+set ai "Auto indent
+set wrap "Wrap lines
 set autoread
 set helplang=cn
-" Turn on the WiLd menu
-"set wildmenu
-set wildignore=*.o,*~,*.pyc
-
-"Always show current position
+set wildignore=*.o,*~,*.pyc,*.so,*.swp
 set ruler
-" Show matching brackets when text indicator is over them
 set showmatch
-" Height of the command bar
-set cmdheight=3
-
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
-
-" Ignore case when searching
+set cmdheight=2
 set ignorecase
-" Highlight search results
 set hlsearch
-" Makes search act like search in modern browsers
 set incsearch
-
-" Don't redraw while executing macros (good performance config)
-set lazyredraw
-
-" For regular expressions turn magic on
-set magic
-
-" How many tenths of a second to blink when matching brackets
-set mat=2
-
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+" Files, backups and undo
+set nobackup
+set nowb
+set noswapfile
+" Linebreak on 500 characters
+set lbr
+set tw=500
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
+set fileencodings=utf-8,gbk,big5
+set colorcolumn=81
+highlight colorcolumn ctermbg=red ctermfg=white
 
-" => Files, backups and undo
-set nobackup
-set nowb
-set noswapfile
+nn <leader>w :w<cr>
+nn <leader>q :q<cr>
+nn <space> /
+vn <space> "/y/\V<c-r>"<cr>
+" window
+nn <C-j> <C-W>j
+nn <C-k> <C-W>k
+nn <C-h> <C-W>h
+nn <C-l> <C-W>l
+" buffer
+nn <F4> :buffers<CR>:buffer<Space>
+let c = 1
+while c <= 20
+    exe 'nn ' . c . 'gb :' . c . 'b<CR>'
+    let c += 1
+endwhile
 
-set expandtab
-set smarttab
-set shiftwidth=4
-set tabstop=4
+nn ( f(
+nn ) f)
+vn ( f(
+vn ) f)
+" just back (
+nn ,) )
+nn ,( (
+vn ,( (
+vn ,) )
+" parent block
+nn { [{
+nn } ]}
+vn { [{
+vn } ]}
+nn ,{ {
+nn ,} }
+vn ,{ {
+vn ,} }
+" html parent node
+nn [t vatatov
+nn ]t vatatv
+nn <leader>a VggoG
+nn <c-n> gt
+nn <c-p> gT
 
-" Linebreak on 500 characters
-set lbr
-set tw=500
+ino <c-h> <Left>
+ino <c-j> <Down>
+ino <c-k> <Up>
+ino <c-l> <right>
+cno <c-p> <up>
+cno <c-n> <down>
+vn <c-c> <esc>
 
-" Remember info about open buffers on close
-set viminfo^=%
+nn <c-m> :noh<cr>
+" add(use) new line blow
+nn <s-u> o<esc>
+" break(kill) to new line
+nn <s-k> i<cr><esc>
+" folder
+nn z, zfat
+nn z[ :sil! normal f{zdzfa{<cr>
+nn z{ :sil! normal f[zdzfa[<cr>
 
-set ai "Auto indent
-"set si "Smart indent
-set wrap "Wrap lines
+nn <leader>p "0p
+nn <leader><s-p> "0P
+vn <leader>p "0p
+vn <leader><s-p> "0P
+nn <leader>d "_d
+vn <leader>d "_d
+set pastetoggle=<f5>
+set iskeyword+=-,$
 
-"set laststatus=2
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
 
-map <space> /
-map <c-space> ?
+hi MatchParen cterm=none ctermbg=green ctermfg=white
 
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
+au BufEnter *.js,*.html,*.scss,*.less 
+    \ if &fileencoding != 'utf-8' | echo 'Warn: encoding is '.&fileencoding .', not utf-8' | endif
 
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-" Close the current buffer
-map <leader>bd :Bclose<cr>
-" Close all the buffers
-map <leader>ba :1,1000 bd!<cr>
-
-
-" Quickly open a buffer for scripbble
-"map <leader>q :e ~/buffer<cr>
-
-" Toggle paste mode on and off
-"map <leader>pp :setlocal paste!<cr>
-
-" => Visual mode related
-" Visual mode pressing * or # searches for the current selection
-"vnoremap <silent> * :call VisualSelection('f')<CR>
-"vnoremap <silent> # :call VisualSelection('b')<CR>
-
-
-" Return to last edit position when opening files (You want this!)
+" Return to last edit position when opening files 
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
 
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
+" diff change
+fun! s:DiffChange()
+    let filetype=&ft
+    diffthis
+    vnew | r # | normal! 1Gdd
+    diffthis
+    exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfun
+com! DiffChange call s:DiffChange()
 
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction
+" toggle line number
+nn <silent> <f6> :if &number \| set nonumber \| else \| set number \| endif<cr>
 
-function! VisualSelection(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
+" use ctrlp to search file under the cursor
+fun! GoFile()
+    let line = getline('.')
+    let start = col('.') - 1
+    let chars = '[[:alnum:]-_./\\]\+'
+    while start >= 0 && match(line[start], chars) >= 0
+        let start -= 1
+    endwhile
+    let str = matchstr(line, chars, start)
+    let str = substitute(substitute(str, '^\.\+', '', ''), '^[\\/]', '', '')
+    if str != ''
+        let g:ctrlp_lazy_update = 10
+        CtrlP
+        exe 'normal '.substitute(str, '[\-]', '', 'g')
+        let g:ctrlp_lazy_update = 0
     endif
+endfun
+au BufEnter *.js,*.html,*.scss,*.less nn <buffer> gp :call GoFile()<cr>
 
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
+" macvim
+set guifont=Menlo:h16
 
-
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    en
-    return ''
-endfunction
-
-function! <SID>BufcloseCloseIt()
-   let l:currentBufNum = bufnr("%")
-   let l:alternateBufNum = bufnr("#")
-
-   if buflisted(l:alternateBufNum)
-     buffer #
-   else
-     bnext
-   endif
-
-   if bufnr("%") == l:currentBufNum
-     new
-   endif
-
-   if buflisted(l:currentBufNum)
-     execute("bdelete! ".l:currentBufNum)
- endif
-endfunction
-
-" ctrlP
-set wildignore+=*/tmp/*,*.so,*.swp
-
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }

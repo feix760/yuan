@@ -1,0 +1,106 @@
+snippet { "block" i
+${0} {
+	${1:${VISUAL}}
+}
+endsnippet
+snippet $
+document.querySelectorAll(${1:'${2}'})
+endsnippet
+snippet if
+if (${1}) {
+	${0:${VISUAL}}
+}
+endsnippet
+snippet own "hasOwnProperty()" i
+hasOwnProperty(${1})
+endsnippet
+snippet p "@param"
+@param {${1:String}} ${2:name} ${0}
+endsnippet
+snippet ret "@return"
+@return {${1:String}} ${0}
+endsnippet
+snippet type "@type"
+@type {${1:String}} ${0}
+endsnippet
+snippet pro "new Promise()" i
+new Promise(function(resolve, reject) {
+	${0}
+})${1:;}
+endsnippet
+snippet then "Promise.then(succ)" i
+then(function(${2:data}) {
+	${0}
+})${1:;}
+endsnippet
+snippet catch "Promise.catch(err)" i
+catch(function(${2:err}) {
+	${0}
+})${1:;}
+endsnippet
+snippet l "console.log()"
+console.log(${0});
+endsnippet
+snippet it "Array's filter & forEach & ..." i
+${1:filter}(function(${2:item}${3:, i}) {
+	${0}
+})${4:;}
+endsnippet
+snippet each "Array.forEach" i
+forEach(function(${1:item}${2:, i}) {
+	${0}
+})${3:;}
+endsnippet
+snippet map "Array.map" i
+map(function(${1:item}${2:, i}) {
+	${0}
+})${3:;}
+endsnippet
+snippet io "indexOf !== -1" i
+${1:container}.indexOf(${2:inner}) !== -1${0}
+endsnippet
+snippet try
+try {
+	${0:${VISUAL}}
+} catch(ex) {
+}
+endsnippet
+snippet fn
+/**
+ * ${3:$1}`!p 
+args = [i.strip() for i in t[2].split(',')]
+for i in args:
+	if i:
+		snip.rv += "\n * @param {Object} " + i
+` 
+ */
+function ${1:name}(${2}) {
+	${0}
+}
+endsnippet
+snippet vf
+/**
+ * ${3:$1}`!p 
+args = [i.strip() for i in t[2].split(',')]
+for i in args:
+	if i:
+		snip.rv += "\n * @param {Object} " + i
+` 
+ */
+var ${1:name} = function(${2}) {
+	${0}
+}
+endsnippet
+snippet ef
+/**
+ * ${3:$1}`!p 
+args = [i.strip() for i in t[2].split(',')]
+for i in args:
+	if i:
+		snip.rv += "\n * @param {Object} " + i
+` 
+ */
+exports.${1:name} = function(${2}) {
+	${0}
+}
+endsnippet
