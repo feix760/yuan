@@ -29,7 +29,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'feix760/css3complete.vim'
 Plugin 'ashisha/image.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on
 
@@ -155,11 +155,6 @@ nn <C-h> <C-W>h
 nn <C-l> <C-W>l
 " buffer
 nn <F4> :buffers<CR>:buffer<Space>
-let c = 1
-while c <= 20
-    exe 'nn ' . c . 'gb :' . c . 'b<CR>'
-    let c += 1
-endwhile
 
 nn ( f(
 nn ) f)
@@ -200,9 +195,8 @@ nn <s-u> o<esc>
 " break(kill) to new line
 nn <s-k> i<cr><esc>
 " folder
-nn z, zfat
-nn z[ :sil! normal f{zdzfa{<cr>
-nn z{ :sil! normal f[zdzfa[<cr>
+nn zt zfat
+nn z[ :sil! normal $F{zfa{<cr>
 
 nn <leader>p "0p
 nn <leader><s-p> "0P
