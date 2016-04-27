@@ -1,0 +1,3 @@
+#!/bin/bash
+
+fis3 release "$@"
