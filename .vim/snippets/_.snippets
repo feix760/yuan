@@ -4,3 +4,14 @@ snippet time
 	`strftime("%H:%M")`
 snippet datetime
 	`strftime("%Y-%m-%d %H:%M")`
+snippet cmt
+	/**
+	 * ${0}
+	 */
+snippet fcmt
+	/**
+	 * @file ${1}
+	 * @author `g:snips_author`(`g:snips_mail`)
+	 * @date `strftime("%Y-%m-%d")`
+	 */
+	${0}

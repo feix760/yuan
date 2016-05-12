@@ -1,3 +1,3 @@
 #!/bin/bash
 
-fis3 release "$@"
+fis3 release -c "$@"
