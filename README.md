@@ -12,5 +12,5 @@ git clone --recursive https://github.com/feix760/yuan.git temp
 ### 2. vim配置
 
 - 拷贝`temp/.vim` `temp/.vimrc`至用户目录
-- 进入vim`:PluginInstall`安装插件
+- 进入vim使用`:PluginInstall`安装插件
 
