@@ -29,9 +29,12 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'feix760/css3complete.vim'
 Plugin 'ashisha/image.vim'
+Plugin 'mxw/vim-jsx'
 " Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on
+
+let g:jsx_ext_required = 0
 
 set completeopt-=preview
 let g:ycm_key_list_select_completion = ['<Down>']
@@ -39,11 +42,14 @@ let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_auto_trigger = 0
 let g:ycm_key_invoke_completion = '<C-N>'
 
+
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 let g:autoformat_verbosemode = 1
+let g:formatters_jsx = ['jsbeautify_javascript', 'pyjsbeautify_javascript', 'jscs']
+let g:formatters_javascript_jsx = ['jsbeautify_javascript', 'pyjsbeautify_javascript', 'jscs']
 
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_no_default_key_mappings = 1
