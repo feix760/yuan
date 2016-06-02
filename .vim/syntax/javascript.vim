@@ -2,8 +2,7 @@
 " Language:     JavaScript
 " Maintainer:   vim-javascript community
 " URL:          https://github.com/pangloss/vim-javascript
-
-syntax keyword jsBuiltins self length
+syntax keyword jsBuiltins self define require navigator
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
@@ -18,10 +17,12 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsStorageClass         Identifier
   HiLink jsParens               Operator
   HiLink jsBraces               Function
+  HiLink jsBrackets             Function
   HiLink jsFuncParens           Operator
   HiLink jsFuncBraces           Function
   HiLink jsClassBraces          Function
   HiLink jsThis                 Identifier
+  HiLink jsLength                 Identifier
   delcommand HiLink
 endif
 
