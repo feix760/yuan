@@ -29,9 +29,6 @@ Plugin 'feix760/css3complete.vim'
 Plugin 'ashisha/image.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'pangloss/vim-javascript'
-" Plugin 'isRuslan/vim-es6'
-" Plugin 'othree/yajs.vim'
-" Plugin 'othree/es.next.syntax.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
@@ -44,7 +41,6 @@ let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_auto_trigger = 0
 let g:ycm_key_invoke_completion = '<C-N>'
-
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -162,8 +158,6 @@ nn <C-j> <C-W>j
 nn <C-k> <C-W>k
 nn <C-h> <C-W>h
 nn <C-l> <C-W>l
-" buffer
-nn <F4> :buffers<CR>:buffer<Space>
 
 nn ( f(
 nn ) f)
