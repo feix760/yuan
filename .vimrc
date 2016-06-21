@@ -5,7 +5,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/L9'
 Plugin 'majutsushi/tagbar' " taglist
-Plugin 'groenewege/vim-less'
 Plugin 'mattn/emmet-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
@@ -13,7 +12,6 @@ Plugin 'ivalkeen/nerdtree-execute'
 Plugin 'scrooloose/nerdcommenter' " comment code
 Plugin 'godlygeek/tabular' " algin cols
 Plugin 'SirVer/ultisnips'
-Plugin 'walm/jshint.vim'
 Plugin 'tpope/vim-fugitive' " git
 Plugin 'juneedahamed/svnj.vim' " svn
 Plugin 'yssl/QFEnter' " quickfix
@@ -22,17 +20,22 @@ Plugin 'feix760/taboo.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'othree/html5-syntax.vim'
+Plugin 'othree/html5.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'feix760/css3complete.vim'
 Plugin 'ashisha/image.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'bronson/vim-trailing-whitespace'
 call vundle#end()
 filetype plugin indent on
+
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+let g:NERDCommentEmptyLines = 1
 
 let g:jsx_ext_required = 0
 
@@ -171,12 +174,10 @@ vn ,) )
 " parent block
 nn { [{
 nn } ]}
+nn ,{ ?}<cr>:noh<cr>%
+nn ,} /{<cr>:noh<cr>%
 vn { [{
 vn } ]}
-nn ,{ {
-nn ,} }
-vn ,{ {
-vn ,} }
 " html parent node
 nn [t vatatov
 nn ]t vatatv
