@@ -2,7 +2,7 @@
 " Language:     JavaScript
 " Maintainer:   vim-javascript community
 " URL:          https://github.com/pangloss/vim-javascript
-syntax keyword jsBuiltins self define require navigator
+syntax keyword jsBuiltins self define require navigator length location
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
