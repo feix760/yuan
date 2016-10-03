@@ -217,6 +217,10 @@ set whichwrap+=<,>,h,l
 
 hi MatchParen cterm=none ctermbg=green ctermfg=white
 
+" wechat wxml/wxss
+au BufEnter *.wxml exe ":set ft+=.html"
+au BufEnter *.wxss exe ":set ft+=.css"
+
 au BufEnter *.js,*.html,*.scss,*.less 
     \ if &fileencoding != 'utf-8' | echo 'Warn: encoding is '.&fileencoding .', not utf-8' | endif
 
