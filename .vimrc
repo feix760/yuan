@@ -29,6 +29,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'groenewege/vim-less'
 " Plugin 'marijnh/tern_for_vim'
 " Plugin 'bronson/vim-trailing-whitespace'
 call vundle#end()
