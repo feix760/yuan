@@ -11,6 +11,8 @@
     ps = push
     br = branch
     lo = log --graph
+    df = diff --ignore-space-at-eol
+    merge = merge -Xignore-space-at-eol
 [push]
 	default = matching
 [credential]                                                                        
