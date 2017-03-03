@@ -10,6 +10,7 @@ alias du="du -d 1 -h"
 alias v="/Applications/MacVim.app/Contents/MacOS/MacVim"
 alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+alias node-debug="node --debug-brk --inspect"
 
 export CLICOLOR=1
 export LSCOLORS=GxFxBxDxCxegedabagacad
