@@ -27,13 +27,16 @@ Plugin 'ashisha/image.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'groenewege/vim-less'
 Plugin 'sidorares/node-vim-debugger'
 Plugin 'posva/vim-vue'
+" Plugin 'moll/vim-node'
+Plugin 'feix760/vim-javascript-gf'
 " Plugin 'marijnh/tern_for_vim'
 " Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'niftylettuce/vim-jinja'
 call vundle#end()
 filetype plugin indent on
 
@@ -205,7 +208,9 @@ nn <s-u> o<esc>
 nn <s-k> i<cr><esc>
 " folder
 nn zt zfat
-nn z[ :sil! normal $F{zfa{<cr>
+nn z[ :sil! normal $zfa{<cr>
+" set fdm=syntax
+set isfname=@,48-57,/,.,-,_,+,,,#,$,%,~,=,@-@
 
 nn <leader>p "0p
 nn <leader><s-p> "0P
@@ -267,7 +272,8 @@ fun! GoFile()
         let g:ctrlp_lazy_update = 0
     endif
 endfun
-au BufEnter *.js,*.html,*.scss,*.less nn <buffer> gp :call GoFile()<cr>
+au BufEnter *.js,*.html,*.scss,*.less,*.tpl nn <buffer> gp :call GoFile()<cr>
+au BufNewFile,BufRead *.tpl set ft=jinja
 
 " macvim
 set guifont=Menlo:h16
