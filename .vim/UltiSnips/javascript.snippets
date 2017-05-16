@@ -29,12 +29,12 @@ new Promise((resolve, reject) => {
 })${1:;}
 endsnippet
 snippet then "Promise.then(succ)" i
-then((${2:data}) => {
+then(${2:data} => {
 	${0}
 })${1:;}
 endsnippet
 snippet catch "Promise.catch(err)" i
-catch((${2:err}) => {
+catch(${2:err} => {
 	${0}
 })${1:;}
 endsnippet
@@ -42,17 +42,17 @@ snippet l "console.log()"
 console.log(${0});
 endsnippet
 snippet it "Array's filter & forEach & ..." i
-${1:filter}((${2:item}${3:, i}) => {
+${1:filter}(${2:item} => {
 	${0}
 })${4:;}
 endsnippet
 snippet each "Array.forEach" i
-forEach((${1:item}${2:, i}) => {
+forEach(${1:item} => {
 	${0}
 })${3:;}
 endsnippet
 snippet map "Array.map" i
-map((${1:item}${2:, i}) => {
+map(${1:item} => {
 	${0}
 })${3:;}
 endsnippet

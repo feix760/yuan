@@ -1,19 +1,19 @@
 [user]
-	name = fishineyuan
-	email = 382184760@qq.com
+  name = 飞羏
+  email = feixiang.yfx@alibaba-inc.com
 [core]
-    editor = vi
+  editor = vi
 [alias]
-    co = checkout
-    st = status -s
-    ci = commit
-    pl = pull
-    ps = push
-    br = branch
-    lo = log --graph
-    df = diff --ignore-space-at-eol
-    merge = merge -Xignore-space-at-eol
+  co = checkout
+  st = status -s
+  ci = commit
+  pl = pull
+  ps = push
+  br = branch
+  lo = log --graph
+  df = diff --ignore-space-at-eol
+  merge = merge -Xignore-space-at-eol
 [push]
-	default = matching
+  default = matching
 [credential]                                                                        
-    helper = cache --timeout=259200000                                              
+  helper = cache --timeout=259200000

@@ -40,6 +40,7 @@ Plugin 'niftylettuce/vim-jinja'
 call vundle#end()
 filetype plugin indent on
 
+let g:netrw_altv = 1
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
@@ -74,8 +75,8 @@ com! Sblame SVNBlame
 let g:taboo_tab_format = ' %N%m %s '
 let g:taboo_modified_tab_flag = '+'
 
-let g:snips_author = 'fishineyuan'
-let g:snips_mail = 'fishineyuan@tencent.com'
+let g:snips_author = '飞羏'
+let g:snips_mail = 'feixiang.yfx@alibaba-inc.com'
 
 let g:qfenter_open_map = ['<CR>', 'o']
 let g:qfenter_vopen_map = ['<C-v>']
@@ -231,7 +232,7 @@ hi MatchParen cterm=none ctermbg=green ctermfg=white
 au BufEnter *.wxml exe ":set ft+=.html"
 au BufEnter *.wxss exe ":set ft+=.css"
 
-au BufEnter *.js,*.html,*.scss exe ":set ff=unix"
+" au BufEnter *.js,*.html,*.scss exe ":set ff=unix"
 
 au BufEnter *.js,*.html,*.scss,*.less 
     \ if &fileencoding != 'utf-8' | echo 'Warn: encoding is '.&fileencoding .', not utf-8' | endif
@@ -276,5 +277,5 @@ au BufEnter *.js,*.html,*.scss,*.less,*.tpl nn <buffer> gp :call GoFile()<cr>
 au BufNewFile,BufRead *.tpl set ft=jinja
 
 " macvim
-set guifont=Menlo:h16
+set guifont=Menlo:h18
 
