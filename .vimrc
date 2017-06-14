@@ -37,6 +37,7 @@ Plugin 'feix760/vim-javascript-gf'
 " Plugin 'marijnh/tern_for_vim'
 " Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'niftylettuce/vim-jinja'
+" Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 filetype plugin indent on
 
@@ -158,8 +159,11 @@ set novisualbell
 set t_vb=
 set tm=500
 set fileencodings=utf-8,gbk,big5
-set colorcolumn=81
+set colorcolumn=101
 highlight colorcolumn ctermbg=red ctermfg=white
+
+au BufEnter *.js,*.html,*.scss,*.less,*.tpl,*.vue match ExtraWhitespace /\s\+$/
+hi ExtraWhitespace ctermbg=red guibg=red
 
 nn <leader>w :w<cr>
 nn <leader>q :q<cr>
@@ -274,7 +278,7 @@ fun! GoFile()
     endif
 endfun
 au BufEnter *.js,*.html,*.scss,*.less,*.tpl nn <buffer> gp :call GoFile()<cr>
-au BufNewFile,BufRead *.tpl set ft=jinja
+au BufNewFile,BufRead *.tpl,*.html set ft+=.jinja
 
 " macvim
 set guifont=Menlo:h18
