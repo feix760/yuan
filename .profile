@@ -10,8 +10,10 @@ alias du="du -d 1 -h"
 alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias highlight="highlight -O rtf --style fine_blue"
+alias tnpm="npm --registry http://registry.npm.alibaba-inc.com"
 alias cnpm="npm --registry https://registry.npm.taobao.org"
 alias aliyun="ssh root@120.78.205.183"
+alias coo="UAE_TOKEN=NnY2R3YWJqdGFtc2h6eWdqMjJxZHu coo"
 alias canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222"
 
 export CLICOLOR=1
