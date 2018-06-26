@@ -7,17 +7,21 @@ alias rm="rm -i"
 alias la="ls -a"
 alias ll="ls -ahl"
 alias du="du -d 1 -h"
-alias v="/Applications/MacVim.app/Contents/MacOS/MacVim"
 alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-alias node-debug="node --debug-brk --inspect"
+alias highlight="highlight -O rtf --style fine_blue"
+alias cnpm="npm --registry https://registry.npm.taobao.org"
+alias aliyun="ssh root@120.78.205.183"
+alias canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222"
 
 export CLICOLOR=1
 export LSCOLORS=GxFxBxDxCxegedabagacad
 export PS1='\[\e[0;36m\]\u\[\e[0m\]:\[\e[0m\]\W\[\e[0m\]\$ '
 
-export NODE_PATH=/usr/local/lib/node_modules
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
+export NODE_PATH=/usr/local/lib/node_modules
 
 ##
 # Your previous /Users/yuan/.profile file was backed up as /Users/yuan/.profile.macports-saved_2015-12-20_at_15:37:03
@@ -27,6 +31,7 @@ export NODE_PATH=/usr/local/lib/node_modules
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+export PATH="$HOME/sbin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

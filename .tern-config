@@ -1,19 +1,18 @@
-
 {
-    "libs": [
-        "browser",
-        "ecma5",
-        "ecma6",
-        "jquery"
-    ],
-    "plugins": {
-        "requirejs": {
-            "baseURL": "./",
-            "paths": {}
-        },
-        "node": {
-        
-        }
+  "libs": [
+    "browser",
+    "ecma5",
+    "ecma6",
+    "jquery"
+  ],
+  "plugins": {
+    "requirejs": {
+      "baseURL": "./",
+      "paths": {}
+    },
+    "node": {
+
     }
+  }
 }
 

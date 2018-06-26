@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+const path = require('path');
+const fs = require('fs');
+const tinify = require('tinify');
+
+const cwd = process.cwd();
+
+tinify.key = '_ZvnwGl2-rOeqcZaRlqn1W1TSv9K6FRc';
+
+process.argv.slice(2).forEach(item => {
+  const absoultePath = item.match(/^\//) ? item : path.join(cwd, item);
+  const outPath = absoultePath.replace(/(\.?[^\.\/]+)$/, '-tinify$1');
+  const source = tinify.fromFile(absoultePath);
+  source.toFile(outPath).then(() => {
+    console.log(`${absoultePath} => ${outPath}`);
+  });
+});

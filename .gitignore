@@ -3,13 +3,11 @@
 !sbin/
 !.gitignore
 !.profile
-!.profile_ubuntu
-!.bashrc_ubuntu
 !.jsbeautifyrc
 !.sublimePackages/
+!.tern-config
 !.vimrc
 !.vim/
-!.tern-config
 .vim/.netrwhist
 .vim/bundle/*
 !.vim/bundle/Vundle.vim

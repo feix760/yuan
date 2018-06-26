@@ -4,7 +4,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/L9'
-Plugin 'majutsushi/tagbar' " taglist
 Plugin 'mattn/emmet-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
@@ -25,6 +24,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ashisha/image.vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 " Plugin 'Valloric/YouCompleteMe'
@@ -32,12 +32,11 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'groenewege/vim-less'
 Plugin 'sidorares/node-vim-debugger'
 Plugin 'posva/vim-vue'
-" Plugin 'moll/vim-node'
 Plugin 'feix760/vim-javascript-gf'
 " Plugin 'marijnh/tern_for_vim'
-" Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'niftylettuce/vim-jinja'
 " Plugin 'vim-syntastic/syntastic'
+Plugin 'cakebaker/scss-syntax.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -46,6 +45,8 @@ let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
+let g:NERDTreeIgnore = [ '^_.*@.*@[[dir]]' ]
+let g:NERDTreeRespectWildIgnore = 1
 
 let g:jsx_ext_required = 0
 
@@ -96,7 +97,7 @@ nn <leader>t :TagbarToggle<cr>
 let g:ctrlp_map = '<c-u>'
 let g:ctrlp_working_path_mode = 'w'
 let g:ctrlp_custom_ignore = {
-     \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|dev)$',
+     \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|dev|dist|upload)$',
      \ 'file': '\v\.(exe|so|dll)$',
      \ 'link': 'some_bad_symbolic_links',
      \ }
@@ -151,7 +152,7 @@ set nobackup
 set nowb
 set noswapfile
 " Linebreak on 500 characters
-set lbr
+" set lbr
 set tw=500
 " No annoying sound on errors
 set noerrorbells
@@ -225,6 +226,7 @@ nn <leader>d "_d
 vn <leader>d "_d
 set pastetoggle=<f5>
 set iskeyword+=-,$
+nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -279,7 +281,9 @@ fun! GoFile()
 endfun
 au BufEnter *.js,*.html,*.scss,*.less,*.tpl nn <buffer> gp :call GoFile()<cr>
 au BufNewFile,BufRead *.tpl,*.html set ft+=.jinja
+au BufNewFile,BufRead *.axml set ft+=.html
+au BufNewFile,BufRead *.ts set ft+=.javascript
 
 " macvim
 set guifont=Menlo:h18
-
+set guioptions-=L

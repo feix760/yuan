@@ -62,7 +62,7 @@ endsnippet
 snippet try
 try {
 	${0:${VISUAL}}
-} catch(ex) {
+} catch (err) {
 }
 endsnippet
 snippet = "arrow function" i
@@ -70,6 +70,25 @@ snippet = "arrow function" i
 	${0}
 }
 endsnippet
-snippet const 
+snippet const
 const { ${1} } = ${0:this};
+endsnippet
+
+snippet webpack
+module.exports = {
+  entry: './index.js',
+  output: {
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015', 'stage-0', 'react'],
+      }
+    }]
+  }
+};
 endsnippet
