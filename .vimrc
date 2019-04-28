@@ -25,7 +25,6 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ashisha/image.vim'
 " Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
-" Plugin 'Quramy/tsuquyomi-vue'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
@@ -33,7 +32,6 @@ Plugin 'zerowidth/vim-copy-as-rtf'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'groenewege/vim-less'
-" Plugin 'sidorares/node-vim-debugger'
 Plugin 'posva/vim-vue'
 Plugin 'feix760/vim-javascript-gf'
 " Plugin 'marijnh/tern_for_vim'
@@ -101,7 +99,7 @@ nn <leader>t :TagbarToggle<cr>
 let g:ctrlp_map = '<c-u>'
 let g:ctrlp_working_path_mode = 'w'
 let g:ctrlp_custom_ignore = {
-     \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|dist|public)$',
+     \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|dist|public|bin-debug|bin-release)$',
      \ 'file': '\v\.(exe|dll)$',
      \ 'link': 'some_bad_symbolic_links',
      \ }
@@ -109,6 +107,7 @@ let g:ctrlp_custom_ignore = {
 let g:tsuquyomi_disable_default_mappings = 1
 let g:tsuquyomi_disable_quickfix = 1
 let g:tsuquyomi_definition_split = 3
+autocmd FileType typescript nn <buffer> <C-]> :TsuDefinition<CR>
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_javascript_checkers=['eslint']
@@ -179,7 +178,7 @@ set fileencodings=utf-8,gbk,big5
 set colorcolumn=101
 highlight colorcolumn ctermbg=red ctermfg=white
 
-au BufEnter *.js,*.html,*.scss,*.less,*.tpl,*.vue match ExtraWhitespace /\s\+$/
+au BufEnter *.js,*.html,*.scss,*.less,*.tpl,*.vue,*.ts,*.xml,*.exml match ExtraWhitespace /\s\+$/
 hi ExtraWhitespace ctermbg=red guibg=red
 
 nn <leader>w :w<cr>
@@ -254,8 +253,6 @@ hi MatchParen cterm=none ctermbg=green ctermfg=white
 au BufEnter *.wxml exe ":set ft+=.html"
 au BufEnter *.wxss exe ":set ft+=.css"
 
-" au BufEnter *.js,*.html,*.scss exe ":set ff=unix"
-
 au BufEnter *.js,*.html,*.scss,*.less 
     \ if &fileencoding != 'utf-8' | echo 'Warn: encoding is '.&fileencoding .', not utf-8' | endif
 
@@ -279,7 +276,7 @@ com! DiffChange call s:DiffChange()
 nn <silent> <f6> :if &number \| set nonumber \| else \| set number \| endif<cr>
 
 " use ctrlp to search file under the cursor
-fun! GoFile()
+fun! SearchFileUnderCursor()
     let line = getline('.')
     let start = col('.') - 1
     let chars = '[[:alnum:]-_./\\]\+'
@@ -295,14 +292,12 @@ fun! GoFile()
         let g:ctrlp_lazy_update = 0
     endif
 endfun
-au BufEnter *.js,*.html,*.scss,*.less,*.tpl nn <buffer> gp :call GoFile()<cr>
+au BufEnter *.js,*.html,*.scss,*.less,*.tpl,*.ts nn <buffer> gp :call SearchFileUnderCursor()<cr>
+
 au BufNewFile,BufRead *.tpl,*.html set ft+=.jinja
-au BufNewFile,BufRead *.axml set ft+=.html
+au BufNewFile,BufRead *.axml set ft=xml
 au BufNewFile,BufRead *.as set ft=java
 au BufNewFile,BufRead *.acss set ft+=.sass
-" au BufNewFile,BufRead *.ts set ft+=.javascript
-
-autocmd FileType typescript nn <buffer> <C-]> :TsuDefinition<CR>
 
 " macvim
 set guifont=Menlo:h18
