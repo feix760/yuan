@@ -23,28 +23,32 @@ Plugin 'othree/html5.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ashisha/image.vim'
-Plugin 'leafgarland/typescript-vim'
+" Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
+" Plugin 'Quramy/tsuquyomi-vue'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'zerowidth/vim-copy-as-rtf'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'groenewege/vim-less'
-Plugin 'sidorares/node-vim-debugger'
+" Plugin 'sidorares/node-vim-debugger'
 Plugin 'posva/vim-vue'
 Plugin 'feix760/vim-javascript-gf'
 " Plugin 'marijnh/tern_for_vim'
 Plugin 'niftylettuce/vim-jinja'
-" Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'vim-scripts/actionscript.vim'
+Plugin 'dart-lang/dart-vim-plugin'
 call vundle#end()
 filetype plugin indent on
 
-let g:netrw_altv = 1
+" let g:netrw_altv = 1
 let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-let g:NERDCommentEmptyLines = 1
+" let g:NERDCompactSexyComs = 1
+" let g:NERDCommentEmptyLines = 1
 let g:NERDTreeIgnore = [ '^_.*@.*@[[dir]]' ]
 let g:NERDTreeRespectWildIgnore = 1
 
@@ -97,10 +101,22 @@ nn <leader>t :TagbarToggle<cr>
 let g:ctrlp_map = '<c-u>'
 let g:ctrlp_working_path_mode = 'w'
 let g:ctrlp_custom_ignore = {
-     \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|dev|dist|upload)$',
-     \ 'file': '\v\.(exe|so|dll)$',
+     \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|dist|public)$',
+     \ 'file': '\v\.(exe|dll)$',
      \ 'link': 'some_bad_symbolic_links',
      \ }
+
+let g:tsuquyomi_disable_default_mappings = 1
+let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_definition_split = 3
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": [ "typescript" ],
+    \ "passive_filetypes": [] }
 
 vn <leader>a;  :Tabularize /^[^:]*\zs:<cr>
 vn <leader>a=  :Tabularize /^[^=]*\zs=<cr>
@@ -136,7 +152,7 @@ set ai "Auto indent
 set wrap "Wrap lines
 set autoread
 set helplang=cn
-set wildignore=*.o,*~,*.pyc,*.so,*.swp
+set wildignore=*.o,*~,*.pyc,*.swp
 set ruler
 set showmatch
 set cmdheight=2
@@ -282,7 +298,11 @@ endfun
 au BufEnter *.js,*.html,*.scss,*.less,*.tpl nn <buffer> gp :call GoFile()<cr>
 au BufNewFile,BufRead *.tpl,*.html set ft+=.jinja
 au BufNewFile,BufRead *.axml set ft+=.html
+au BufNewFile,BufRead *.as set ft=java
+au BufNewFile,BufRead *.acss set ft+=.sass
 au BufNewFile,BufRead *.ts set ft+=.javascript
+
+autocmd FileType typescript nn <buffer> <C-]> :TsuDefinition<CR>
 
 " macvim
 set guifont=Menlo:h18
