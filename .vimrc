@@ -300,7 +300,7 @@ au BufNewFile,BufRead *.tpl,*.html set ft+=.jinja
 au BufNewFile,BufRead *.axml set ft+=.html
 au BufNewFile,BufRead *.as set ft=java
 au BufNewFile,BufRead *.acss set ft+=.sass
-au BufNewFile,BufRead *.ts set ft+=.javascript
+" au BufNewFile,BufRead *.ts set ft+=.javascript
 
 autocmd FileType typescript nn <buffer> <C-]> :TsuDefinition<CR>
 
