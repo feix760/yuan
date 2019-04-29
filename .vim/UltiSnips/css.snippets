@@ -1,0 +1,14 @@
+snippet anim "animation: name duration timing-function delay iteration-count direction;"
+animation: ${1:animation-name} ${2:.3s} ${3:linear} ${4:0};
+endsnippet
+snippet flex "vertical center"
+display: -webkit-box;
+-webkit-box-orient: vertical;
+&:after,
+&:before {
+	content: " ";
+	display: block;
+	flex: 1;
+	visibility: hidden;
+}
+endsnippet

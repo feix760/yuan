@@ -4,7 +4,7 @@ ${0} {
 }
 endsnippet
 snippet $
-document.querySelectorAll(${1:'${2}'})
+document.querySelectorAll(${0})
 endsnippet
 snippet if
 if (${1}) {
@@ -66,14 +66,19 @@ try {
 }
 endsnippet
 snippet = "arrow function" i
-(${1}) => {
+${1} => {
 	${0}
 }
 endsnippet
 snippet const
 const { ${1} } = ${0:this};
 endsnippet
-
+snippet for
+for (let ${1:i} = 0; $1 < ${2:list}.length; $1++) {
+	const ${3:item} = $2[$1];
+	${0:${VISUAL}}
+}
+endsnippet
 snippet webpack
 module.exports = {
   entry: './index.js',
@@ -91,10 +96,4 @@ module.exports = {
     }]
   }
 };
-endsnippet
-snippet for
-for (let ${1:i} = 0; $1 < ${2:list}.length; $1++) {
-	const ${3:item} = $2[$1];
-	${0:${VISUAL}}
-}
 endsnippet

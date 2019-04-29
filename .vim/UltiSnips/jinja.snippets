@@ -1,19 +1,10 @@
-snippet if
-{% if ${1} %}
-${0}
-{% endif %}
-endsnippet
-snippet elif
-{% elif ${1} %}
-${0}
-endsnippet
-snippet for
-{% for ${1:item} in ${2:list} %}
-${0}
-{% endfor %}
-endsnippet
+extends html
+
 snippet =
 {{ ${0} }}
+endsnippet
+snippet %
+{% ${0} %}
 endsnippet
 snippet set
 {% set ${0} %}
@@ -21,9 +12,22 @@ endsnippet
 snippet include
 {% include ${0} %}
 endsnippet
-snippet %
-{% ${0} %}
-endsnippet
 snippet json
 {{ $utils.JSON.stringify(${0}) | safe }}
+endsnippet
+snippet if
+{% if ${1} %}
+${0}
+{% endif %}
+endsnippet
+snippet else
+	<% } else { %>
+endsnippet
+snippet elseif
+	<% } else if (${0}) { %>
+endsnippet
+snippet for
+{% for ${1:item} in ${2:list} %}
+${0}
+{% endfor %}
 endsnippet
