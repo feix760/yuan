@@ -272,6 +272,8 @@ fun! s:DiffChange()
 endfun
 com! DiffChange call s:DiffChange()
 
+com! CamelCase s#_\(\l\)#\u\1#g
+
 " toggle line number
 nn <silent> <f6> :if &number \| set nonumber \| else \| set number \| endif<cr>
 
