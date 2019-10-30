@@ -1,6 +1,3 @@
-snippet anim "animation: name duration timing-function delay iteration-count direction;"
-animation: ${1:animation-name} ${2:.3s} ${3:linear} ${4:0};
-endsnippet
 snippet flex "vertical center"
 display: -webkit-box;
 -webkit-box-orient: vertical;
@@ -11,4 +8,15 @@ display: -webkit-box;
 	flex: 1;
 	visibility: hidden;
 }
+endsnippet
+snippet nowrap "text overflow ellipsis"
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+endsnippet
+snippet nowrap2 "text overflow 2 lines ellipsis"
+overflow: hidden;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
 endsnippet

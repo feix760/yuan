@@ -14,7 +14,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive' " git
 Plugin 'juneedahamed/svnj.vim' " svn
 Plugin 'yssl/QFEnter' " quickfix
-Plugin 'feix760/autospace.vim'
+" Plugin 'feix760/autospace.vim'
 Plugin 'feix760/taboo.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'tpope/vim-repeat'
@@ -22,7 +22,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'othree/html5.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'ashisha/image.vim'
+" Plugin 'ashisha/image.vim'
 " Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'HerringtonDarkholme/yats.vim'
@@ -40,6 +40,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'vim-scripts/actionscript.vim'
 Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'jasonshell/vim-svg-indent'
 call vundle#end()
 filetype plugin indent on
 
@@ -250,8 +251,8 @@ set whichwrap+=<,>,h,l
 hi MatchParen cterm=none ctermbg=green ctermfg=white
 
 " wechat wxml/wxss
-au BufEnter *.wxml exe ":set ft+=.html"
-au BufEnter *.wxss exe ":set ft+=.css"
+au BufEnter *.wxml exe ":set ft=xml"
+au BufEnter *.wxss exe ":set ft=css"
 
 au BufEnter *.js,*.html,*.scss,*.less 
     \ if &fileencoding != 'utf-8' | echo 'Warn: encoding is '.&fileencoding .', not utf-8' | endif
@@ -300,6 +301,7 @@ au BufNewFile,BufRead *.tpl,*.html set ft+=.jinja
 au BufNewFile,BufRead *.axml set ft=xml
 au BufNewFile,BufRead *.as set ft=java
 au BufNewFile,BufRead *.acss set ft+=.sass
+au BufNewFile,BufRead *.snap set ft=javascript
 
 " macvim
 set guifont=Menlo:h18
