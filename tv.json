@@ -1,0 +1,108 @@
+{
+  "data": [
+    {
+      "name": "CCTV-1高清",
+      "url": "http://223.110.242.130:6610/gitv/live1/G_CCTV-1-CQ/1.m3u8"
+    },
+    {
+      "name": "CCTV-4K",
+      "url": "http://112.17.40.140/PLTV/88888888/224/3221226809/index.m3u8"
+    },
+    {
+      "name": "CCTV-1",
+      "url": "https://cctvbsh5ca.v.live.baishancdnx.cn/live/cctv1_2/index.m3u8"
+    },
+    {
+      "name": "CCTV-13",
+      "url": "https://cctvtxyh5ca.liveplay.myqcloud.com/live/cctv13_2/index.m3u8"
+    },
+    {
+      "name": "CCTV-14高清",
+      "url": "http://112.50.243.7/PLTV/88888888/224/3221225819/index.m3u8"
+    },
+    {
+      "name": "CCTV-14",
+      "url": "https://cctvcnch5ca.v.wscdns.com/live/cctvchild_2/index.m3u8"
+    },
+    {
+      "name": "CCTV-5高清",
+      "url": "http://223.110.242.130:6610/gitv/live1/G_CCTV-5-CQ/1.m3u8"
+    },
+    {
+      "name": "CCTV-5+高清",
+      "url": "http://223.110.242.130:6610/gitv/live1/G_CCTV-5PLUS-CQ/1.m3u8"
+    },
+    {
+      "name": "湖南卫视FHD",
+      "url": "http://112.17.40.140/PLTV/88888888/224/3221226553/index.m3u8"
+    },
+    {
+      "name": "广东卫视FHD",
+      "url": "http://112.17.40.140/PLTV/88888888/224/3221226225/index.m3u8"
+    },
+    {
+      "name": "江西卫视FHD",
+      "url": "http://112.17.40.140/PLTV/88888888/224/3221226557/index.m3u8"
+    },
+    {
+      "name": "北京卫视FHD",
+      "url": "http://112.17.40.140/PLTV/88888888/224/3221226164/index.m3u8"
+    },
+    {
+      "name": "东方卫视FHD",
+      "url": "http://112.17.40.140/PLTV/88888888/224/3221226142/index.m3u8"
+    },
+    {
+      "name": "广东卫视FHD",
+      "url": "http://112.17.40.140/PLTV/88888888/224/3221226225/index.m3u8"
+    },
+    {
+      "name": "辽宁卫视HD",
+      "url": "http://112.17.40.140/PLTV/88888888/224/3221226148/index.m3u8"
+    },
+    {
+      "name": "浙江卫视FHD",
+      "url": "http://112.17.40.140/PLTV/88888888/224/3221226136/index.m3u8"
+    },
+    {
+      "name": "CCTV-2高清",
+      "url": "http://223.110.242.130:6610/gitv/live1/G_CCTV-2-CQ/1.m3u8"
+    },
+    {
+      "name": "CCTV-3高清",
+      "url": "http://223.110.242.130:6610/gitv/live1/G_CCTV-3-CQ/1.m3u8"
+    },
+    {
+      "name": "CCTV-4高清",
+      "url": "http://223.110.242.130:6610/gitv/live1/G_CCTV-4-CQ/1.m3u8"
+    },
+    {
+      "name": "CCTV-6高清",
+      "url": "http://223.110.242.130:6610/gitv/live1/G_CCTV-6-CQ/1.m3u8"
+    },
+    {
+      "name": "CCTV-7高清",
+      "url": "http://112.50.243.7/PLTV/88888888/224/3221225805/index.m3u8"
+    },
+    {
+      "name": "CCTV-7FHD",
+      "url": "http://112.17.40.140/PLTV/88888888/224/3221226122/index.m3u8"
+    },
+    {
+      "name": "CCTV-8高清",
+      "url": "http://223.110.242.130:6610/gitv/live1/G_CCTV-8-CQ/1.m3u8"
+    },
+    {
+      "name": "CCTV-9高清",
+      "url": "http://112.50.243.7/PLTV/88888888/224/3221225820/index.m3u8"
+    },
+    {
+      "name": "CCTV-10高清",
+      "url": "http://112.50.243.7/PLTV/88888888/224/3221225814/index.m3u8"
+    },
+    {
+      "name": "CCTV-12高清",
+      "url": "http://112.50.243.7/PLTV/88888888/224/3221225816/index.m3u8"
+    }
+  ]
+}
