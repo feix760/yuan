@@ -113,9 +113,10 @@ autocmd FileType typescript nn <buffer> <C-]> :TsuDefinition<CR>
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+let g:syntastic_typescriptreact_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 let g:syntastic_mode_map = {
     \ "mode": "passive",
-    \ "active_filetypes": [ "typescript" ],
+    \ "active_filetypes": [ "typescript", "typescriptreact" ],
     \ "passive_filetypes": [] }
 
 vn <leader>a;  :Tabularize /^[^:]*\zs:<cr>
