@@ -14,6 +14,6 @@
   df = diff --ignore-space-at-eol
   merge = merge -Xignore-space-at-eol
 [push]
-  default = matching
+  default = simple
 [credential]                                                                        
   helper = cache --timeout=259200000

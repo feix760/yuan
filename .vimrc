@@ -180,7 +180,7 @@ set fileencodings=utf-8,gbk,big5
 set colorcolumn=101
 highlight colorcolumn ctermbg=red ctermfg=white
 
-au BufEnter *.js,*.html,*.scss,*.less,*.tpl,*.vue,*.ts,*.xml,*.exml match ExtraWhitespace /\s\+$/
+au BufEnter *.js,*.jsx,*.html,*.scss,*.less,*.tpl,*.vue,*.ts,*.tsx,*.xml,*.exml match ExtraWhitespace /\s\+$/
 hi ExtraWhitespace ctermbg=red guibg=red
 
 nn <leader>w :w<cr>
@@ -220,6 +220,7 @@ ino <c-h> <Left>
 ino <c-j> <Down>
 ino <c-k> <Up>
 ino <c-l> <right>
+ino <c-c> <esc>
 cno <c-p> <up>
 cno <c-n> <down>
 vn <c-c> <esc>
@@ -303,7 +304,9 @@ au BufNewFile,BufRead *.axml set ft=xml
 au BufNewFile,BufRead *.as set ft=java
 au BufNewFile,BufRead *.acss set ft+=.sass
 au BufNewFile,BufRead *.snap set ft=javascript
+set complete-=i
 
 " macvim
 set guifont=Menlo:h18
 set guioptions-=L
+let g:pymode_python = 'python3'

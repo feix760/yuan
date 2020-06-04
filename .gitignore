@@ -2,7 +2,7 @@
 !.gitconfig
 !sbin/
 !.gitignore
-!.profile
+!.zprofile
 !.jsbeautifyrc
 !.sublimePackages/
 !.tern-config
