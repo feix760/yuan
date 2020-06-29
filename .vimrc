@@ -109,6 +109,7 @@ let g:tsuquyomi_disable_default_mappings = 1
 let g:tsuquyomi_disable_quickfix = 1
 let g:tsuquyomi_definition_split = 3
 autocmd FileType typescript nn <buffer> <C-]> :TsuDefinition<CR>
+autocmd FileType typescriptreact nn <buffer> <C-]> :TsuDefinition<CR>
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_javascript_checkers=['eslint']
