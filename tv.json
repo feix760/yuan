@@ -2,47 +2,27 @@
   "data": [
     {
       "name": "CCTV-1",
-      "url": "https://cctvbsh5ca.v.live.baishancdnx.cn/live/cctv1_2/index.m3u8"
+      "url": "https://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8"
     },
     {
       "name": "CCTV-13",
-      "url": "https://cctvtxyh5ca.liveplay.myqcloud.com/live/cctv13_2/index.m3u8"
-    },
-    {
-      "name": "CCTV-2财经",
-      "url": "https://cctvtxyh5ca.liveplay.myqcloud.com/live/cctv2_2/index.m3u8"
-    },
-    {
-      "name": "CCTV-3综艺",
-      "url": "https://cctvtxyh5ca.liveplay.myqcloud.com/live/cctv3_2/index.m3u8"
-    },
-    {
-      "name": "CCTV-4国际",
-      "url": "https://cctvtxyh5ca.liveplay.myqcloud.com/live/cctv4_2/index.m3u8"
-    },
-    {
-      "name": "CCTV-6电影",
-      "url": "https://cctvtxyh5ca.liveplay.myqcloud.com/live/cctv6_2/index.m3u8"
+      "url": "https://cctvcnch5ca.v.wscdns.com/live/cctv13_2/index.m3u8"
     },
     {
       "name": "CCTV-7",
-      "url": "https://cctvtxyh5ca.liveplay.myqcloud.com/live/cctv7_2/index.m3u8"
+      "url": "https://cctvksh5ca.v.kcdnvip.com/clive/cctv7_2/index.m3u8"
     },
     {
-      "name": "CCTV-8电视剧",
-      "url": "https://cctvtxyh5ca.liveplay.myqcloud.com/live/cctv8_2/index.m3u8"
+      "name": "CCTV-8",
+      "url": "https://cctvksh5ca.v.kcdnvip.com/clive/cctv8_2/index.m3u8"
     },
     {
-      "name": "CCTV-10科教",
+      "name": "CCTV-9",
+      "url": "https://cctvksh5ca.v.kcdnvip.com/clive/cctvjilu_2/index.m3u8"
+    },
+    {
+      "name": "CCTV-10",
       "url": "https://cctvtxyh5ca.liveplay.myqcloud.com/live/cctv10_2/index.m3u8"
-    },
-    {
-      "name": "CCTV-12社会与法",
-      "url": "https://cctvtxyh5ca.liveplay.myqcloud.com/live/cctv12_2/index.m3u8"
-    },
-    {
-      "name": "CCTV-15音乐",
-      "url": "https://cctvtxyh5ca.liveplay.myqcloud.com/live/cctv15_2/index.m3u8"
     }
   ]
 }
