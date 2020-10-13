@@ -9,7 +9,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ivalkeen/nerdtree-execute'
 Plugin 'scrooloose/nerdcommenter' " comment code
-Plugin 'godlygeek/tabular' " algin cols
+Plugin 'junegunn/vim-easy-align' " algin cols
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive' " git
 Plugin 'juneedahamed/svnj.vim' " svn
@@ -119,9 +119,6 @@ let g:syntastic_mode_map = {
     \ "mode": "passive",
     \ "active_filetypes": [ "typescript", "typescriptreact" ],
     \ "passive_filetypes": [] }
-
-vn <leader>a;  :Tabularize /^[^:]*\zs:<cr>
-vn <leader>a=  :Tabularize /^[^=]*\zs=<cr>
 
 set diffopt=vertical
 
@@ -311,3 +308,4 @@ set complete-=i
 set guifont=Menlo:h18
 set guioptions-=L
 let g:pymode_python = 'python3'
+set wildignore+=*/app/web/node_modules/*

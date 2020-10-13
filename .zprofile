@@ -1,13 +1,12 @@
-export SVN_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim '
-export GIT_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim '
+export SVN_EDITOR='/Applications/MacVim.app/Contents/bin/vim'
+export GIT_EDITOR='/Applications/MacVim.app/Contents/bin/vim'
 
 alias iftop="sudo iftop -B"
 alias rm="rm -i"
 alias la="ls -a"
 alias ll="ls -ahl"
 alias du="du -d 1 -h"
-alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
-alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+# ln -s /Applications/MacVim.app/Contents/bin/vim /usr/local/bin/vi
 alias highlight="highlight -O rtf --style fine_blue"
 alias tnpm="npm --registry http://registry.npm.alibaba-inc.com"
 alias cnpm="npm --registry https://registry.npm.taobao.org"
