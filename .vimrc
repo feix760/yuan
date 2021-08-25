@@ -100,7 +100,7 @@ nn <leader>t :TagbarToggle<cr>
 let g:ctrlp_map = '<c-u>'
 let g:ctrlp_working_path_mode = 'w'
 let g:ctrlp_custom_ignore = {
-     \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|dist|public|bin-debug|bin-release)$',
+     \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules.*|dist|public|bin-debug|bin-release)$',
      \ 'file': '\v\.(exe|dll)$',
      \ 'link': 'some_bad_symbolic_links',
      \ }
@@ -116,8 +116,8 @@ let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 let g:syntastic_typescriptreact_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 let g:syntastic_mode_map = {
+    \ 'active_filetypes': [ 'typescript', 'typescriptreact' ],
     \ "mode": "passive",
-    \ "active_filetypes": [ "typescript", "typescriptreact" ],
     \ "passive_filetypes": [] }
 
 set diffopt=vertical
