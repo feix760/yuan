@@ -17,3 +17,5 @@
   default = simple
 [credential]                                                                        
   helper = cache --timeout=259200000
+[pull]
+	rebase = true
