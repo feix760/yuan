@@ -7,7 +7,8 @@ alias la="ls -a"
 alias ll="ls -ahl"
 alias du="du -d 1 -h"
 # ln -s /Applications/MacVim.app/Contents/bin/vim /usr/local/bin/vi
-alias highlight="highlight -O rtf --style fine_blue"
+# highlight themes location: /usr/local/Cellar/highlight/4.1/share/highlight/themes
+alias highlight="highlight -O rtf --style edit-eclipse --font-size 22"
 alias ttnpm="npm --registry http://registry.npm.alibaba-inc.com"
 alias cnpm="npm --registry https://registry.npm.taobao.org"
 alias mongod="mongod --dbpath $HOME/.mongod/data"
