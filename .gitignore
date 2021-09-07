@@ -32,3 +32,10 @@
 /.NERDTreeBookmarks
 /.hidpi-disable
 /.feproxy/
+/.alicloudprint/
+/.android/
+/.cups/
+/.docker/
+/.kube/
+/.yarnrc
+/.zshrc

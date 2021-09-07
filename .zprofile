@@ -1,7 +1,7 @@
 export SVN_EDITOR='/Applications/MacVim.app/Contents/bin/vim'
 export GIT_EDITOR='/Applications/MacVim.app/Contents/bin/vim'
 
-alias iftop="sudo iftop -B"
+# alias iftop="sudo iftop -B"
 alias rm="rm -i"
 alias la="ls -a"
 alias ll="ls -ahl"
@@ -26,4 +26,4 @@ export NODE_PATH=/usr/local/lib/node_modules
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-export PATH="$HOME/sbin:$HOME/Library/Android/sdk/platform-tools:$PATH"
+export PATH="$HOME/sbin:/usr/local/platform-tools:$PATH"
