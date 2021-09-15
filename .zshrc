@@ -1,5 +1,7 @@
 export SVN_EDITOR='/Applications/MacVim.app/Contents/bin/vim'
 export GIT_EDITOR='/Applications/MacVim.app/Contents/bin/vim'
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;35;40'
 
 # alias iftop="sudo iftop -B"
 alias rm="rm -i"
@@ -15,7 +17,8 @@ alias mongod="mongod --dbpath $HOME/.mongod/data"
 
 export CLICOLOR=1
 export LSCOLORS=GxFxBxDxCxegedabagacad
-export PS1='\[\e[0;36m\]\u\[\e[0m\]:\[\e[0m\]\W\[\e[0m\]\$ '
+# https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
+export PROMPT='%F{blue}%B%n%b%f@%1~ %# '
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
@@ -23,3 +26,5 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export NODE_PATH=/usr/local/lib/node_modules
 
 export PATH="$HOME/sbin:/usr/local/platform-tools:$PATH"
+
+export GITLAB_HOME=$HOME/gitlab

@@ -38,5 +38,9 @@
 /.docker/
 /.kube/
 /.yarnrc
-/.zshrc
 /.oracle_jre_usage/
+/Applications/
+/.ngp-site-tmp/
+/.vscode/
+/.bash_history
+/.wget-hsts
