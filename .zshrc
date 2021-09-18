@@ -1,9 +1,7 @@
 export SVN_EDITOR='/Applications/MacVim.app/Contents/bin/vim'
 export GIT_EDITOR='/Applications/MacVim.app/Contents/bin/vim'
-export GREP_OPTIONS='--color=always'
-export GREP_COLOR='1;35;40'
 
-# alias iftop="sudo iftop -B"
+alias iftop="sudo iftop -B -i en0"
 alias rm="rm -i"
 alias la="ls -a"
 alias ll="ls -ahl"
@@ -16,6 +14,8 @@ alias cnpm="npm --registry https://registry.npm.taobao.org"
 alias mongod="mongod --dbpath $HOME/.mongod/data"
 
 export CLICOLOR=1
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;35;40'
 export LSCOLORS=GxFxBxDxCxegedabagacad
 # https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
 export PROMPT='%F{blue}%B%n%b%f@%1~ %# '
