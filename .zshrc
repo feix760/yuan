@@ -26,5 +26,6 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export NODE_PATH=/usr/local/lib/node_modules
 
 export PATH="$HOME/sbin:/usr/local/platform-tools:$PATH"
+export PATH="/usr/local/mysql/bin:$PATH"
 
 export GITLAB_HOME=$HOME/gitlab

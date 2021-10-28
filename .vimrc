@@ -33,6 +33,7 @@ Plugin 'zerowidth/vim-copy-as-rtf'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'groenewege/vim-less'
 Plugin 'posva/vim-vue'
+Plugin 'Quramy/tsuquyomi-vue'
 Plugin 'feix760/vim-javascript-gf'
 " Plugin 'marijnh/tern_for_vim'
 Plugin 'niftylettuce/vim-jinja'
@@ -64,6 +65,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 let g:autoformat_verbosemode = 1
+let g:formatters_javascript = ['jsbeautify_javascript']
 let g:formatters_jsx = ['jsbeautify_javascript', 'pyjsbeautify_javascript', 'jscs']
 let g:formatters_javascript_jsx = ['jsbeautify_javascript', 'pyjsbeautify_javascript', 'jscs']
 
@@ -110,6 +112,7 @@ let g:tsuquyomi_disable_quickfix = 1
 let g:tsuquyomi_definition_split = 3
 autocmd FileType typescript nn <buffer> <C-]> :TsuDefinition<CR>
 autocmd FileType typescriptreact nn <buffer> <C-]> :TsuDefinition<CR>
+autocmd FileType vue nn <buffer> <C-]> :TsuDefinition<CR>
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_javascript_checkers=['eslint']
@@ -272,6 +275,7 @@ fun! s:DiffChange()
     exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfun
 com! DiffChange call s:DiffChange()
+com! Gb Git blame
 
 com! CamelCase s#_\(\l\)#\u\1#g
 
@@ -297,10 +301,10 @@ fun! SearchFileUnderCursor()
 endfun
 au BufEnter *.js,*.html,*.scss,*.less,*.tpl,*.ts nn <buffer> gp :call SearchFileUnderCursor()<cr>
 
-au BufNewFile,BufRead *.tpl,*.html set ft+=.jinja
+au BufNewFile,BufRead *.tpl set ft=jinja
 au BufNewFile,BufRead *.axml set ft=xml
 au BufNewFile,BufRead *.as set ft=java
-au BufNewFile,BufRead *.acss set ft+=.sass
+au BufNewFile,BufRead *.acss set ft=.sass
 au BufNewFile,BufRead *.snap set ft=javascript
 set complete-=i
 
