@@ -44,3 +44,7 @@
 /.vscode/
 /.bash_history
 /.wget-hsts
+/go/
+/.zprofile
+/.yarn/
+/.lesshst
