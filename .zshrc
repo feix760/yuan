@@ -1,5 +1,6 @@
 export SVN_EDITOR='/Applications/MacVim.app/Contents/bin/vim'
 export GIT_EDITOR='/Applications/MacVim.app/Contents/bin/vim'
+export EDITOR='/Applications/MacVim.app/Contents/bin/vim'
 
 alias iftop="sudo iftop -B -i en0"
 alias rm="rm -i"
@@ -11,7 +12,7 @@ alias du="du -d 1 -h"
 alias highlight="highlight -O rtf --style edit-eclipse --font-size 22"
 alias ttnpm="npm --registry http://registry.npm.alibaba-inc.com"
 alias cnpm="npm --registry https://registry.npm.taobao.org"
-alias mongod="mongod --dbpath $HOME/.mongod/data"
+alias mongod="mongod --fork --dbpath $HOME/.mongodb/data --logpath $HOME/.mongodb/mongod.log"
 
 export CLICOLOR=1
 export GREP_OPTIONS='--color=always'

@@ -3,6 +3,7 @@
   email = feixiang.yfx@alibaba-inc.com
 [core]
   editor = vi
+	symlinks = false
 [alias]
   co = checkout
   st = status -s
