@@ -24,12 +24,12 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'hail2u/vim-css3-syntax'
 " Plugin 'ashisha/image.vim'
 " Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/tsuquyomi'
+" Plugin 'Quramy/tsuquyomi'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'MaxMEllon/vim-jsx-pretty'
 " Plugin 'zerowidth/vim-copy-as-rtf'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'groenewege/vim-less'
 Plugin 'posva/vim-vue'
@@ -59,6 +59,7 @@ let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_auto_trigger = 0
 let g:ycm_key_invoke_completion = '<C-N>'
+nnoremap <C-[> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -68,6 +69,8 @@ let g:autoformat_verbosemode = 1
 let g:formatters_javascript = ['jsbeautify_javascript']
 let g:formatters_jsx = ['jsbeautify_javascript', 'pyjsbeautify_javascript', 'jscs']
 let g:formatters_javascript_jsx = ['jsbeautify_javascript', 'pyjsbeautify_javascript', 'jscs']
+let g:formatdef_autopep8 = "'autopep8 - --indent-size=2 --aggressive --ignore=E501'"
+let g:formatters_python = ['autopep8']
 
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_no_default_key_mappings = 1
@@ -313,3 +316,5 @@ set guifont=Menlo:h18
 set guioptions-=L
 let g:pymode_python = 'python3'
 set wildignore+=*/app/web/node_modules/*
+
+au FileType python setlocal ts=2 sts=2 sw=2 noexpandtab
