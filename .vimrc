@@ -24,7 +24,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'hail2u/vim-css3-syntax'
 " Plugin 'ashisha/image.vim'
 " Plugin 'leafgarland/typescript-vim'
-" Plugin 'Quramy/tsuquyomi'
+Plugin 'Quramy/tsuquyomi'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'MaxMEllon/vim-jsx-pretty'
@@ -59,7 +59,11 @@ let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_auto_trigger = 0
 let g:ycm_key_invoke_completion = '<C-N>'
-nnoremap <C-[> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_filetype_blacklist = {
+      \ 'typescript': 1,
+      \ 'typescriptreact': 1,
+      \}
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -113,18 +117,22 @@ let g:ctrlp_custom_ignore = {
 let g:tsuquyomi_disable_default_mappings = 1
 let g:tsuquyomi_disable_quickfix = 1
 let g:tsuquyomi_definition_split = 3
+let g:tsuquyomi_completion_detail = 1
+autocmd FileType typescript ino <buffer> <C-n> <C-X><C-O>
+autocmd FileType typescriptreact ino <buffer> <C-n> <C-X><C-O>
 autocmd FileType typescript nn <buffer> <C-]> :TsuDefinition<CR>
 autocmd FileType typescriptreact nn <buffer> <C-]> :TsuDefinition<CR>
 autocmd FileType vue nn <buffer> <C-]> :TsuDefinition<CR>
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_javascript_checkers=['eslint']
+" let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 let g:syntastic_typescriptreact_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 let g:syntastic_mode_map = {
     \ 'active_filetypes': [ 'typescript', 'typescriptreact' ],
     \ "mode": "passive",
-    \ "passive_filetypes": [] }
+    \ "passive_filetypes": []
+\}
 
 set diffopt=vertical
 
