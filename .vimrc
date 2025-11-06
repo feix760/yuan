@@ -15,7 +15,7 @@ Plugin 'tpope/vim-fugitive' " git
 Plugin 'juneedahamed/svnj.vim' " svn
 Plugin 'yssl/QFEnter' " quickfix
 " Plugin 'feix760/autospace.vim'
-" Plugin 'feix760/taboo.vim'
+Plugin 'feix760/taboo.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
@@ -34,7 +34,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'groenewege/vim-less'
 Plugin 'posva/vim-vue'
 " Plugin 'Quramy/tsuquyomi-vue'
-Plugin 'feix760/vim-javascript-gf'
+" Plugin 'feix760/vim-javascript-gf'
 " Plugin 'marijnh/tern_for_vim'
 " Plugin 'niftylettuce/vim-jinja'
 " Plugin 'vim-syntastic/syntastic'
@@ -62,6 +62,7 @@ let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_auto_trigger = 0
 let g:ycm_auto_hover = ''
 let g:ycm_key_invoke_completion = '<C-N>'
+let g:ycm_always_populate_location_list = 1
 " let g:ycm_show_diagnostics_ui = 0
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
@@ -302,3 +303,5 @@ set guioptions-=L
 let g:pymode_python = 'python3'
 set wildignore+=*/app/web/node_modules/*
 
+" ino <c-]> <Plug>(copilot-next)
+" ino <c-[> <Plug>(copilot-previous)
