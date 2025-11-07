@@ -56,6 +56,7 @@ let g:NERDTreeRespectWildIgnore = 1
 
 let g:jsx_ext_required = 0
 
+set formatoptions-=r formatoptions-=o
 set completeopt-=preview
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
@@ -168,8 +169,15 @@ set novisualbell
 set t_vb=
 set tm=500
 set fileencodings=utf-8,gbk,big5
-set colorcolumn=101
-highlight colorcolumn ctermbg=red ctermfg=white
+
+function! SetColorcolumn()
+  set colorcolumn=101
+  if stridx(&filetype, 'Avante') == 0
+    set colorcolumn=100000
+  endif
+  highlight colorcolumn ctermbg=red ctermfg=white
+endfunction
+au WinEnter * call SetColorcolumn()
 
 au BufEnter *.js,*.jsx,*.html,*.scss,*.less,*.tpl,*.vue,*.ts,*.tsx,*.xml,*.exml match ExtraWhitespace /\s\+$/
 hi ExtraWhitespace ctermbg=red guibg=red
@@ -305,3 +313,5 @@ set wildignore+=*/app/web/node_modules/*
 
 " ino <c-]> <Plug>(copilot-next)
 " ino <c-[> <Plug>(copilot-previous)
+
+nn <c-a> :AvanteToggle<cr>

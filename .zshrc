@@ -7,6 +7,7 @@ alias rm="rm -i"
 alias la="ls -a"
 alias ll="ls -ahl"
 alias du="du -d 1 -h"
+alias vi="/opt/homebrew/bin/nvim"
 # ln -s /Applications/MacVim.app/Contents/bin/vim /usr/local/bin/vi
 # highlight themes location: /usr/local/Cellar/highlight/4.1/share/highlight/themes
 alias highlight="highlight -O rtf --style edit-eclipse --font-size 22"
