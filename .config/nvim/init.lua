@@ -1,5 +1,6 @@
 vim.cmd[[source ~/.vimrc]]
 -- 插件位置 ~/.local/share/nvim/site/pack/packer/start/
+-- 将这个文件的fs模块去除
 
 -- 只有在第一次启动时才自动安装 packer.nvim（可选）
 local ensure_packer = function()
@@ -40,13 +41,17 @@ require('packer').startup(function(use)
     run = 'make',
     config = function()
       require('avante').setup({
+        override_prompt_dir = function()
+          -- Your logic to determine the prompt directory
+          return vim.fn.expand("~/.config/nvim/templates")
+        end,
         behaviour = {
           -- auto_suggestions = true,  -- 启用自动建议功能
           auto_suggestions_respect_ignore = true,  -- 尊重.gitignore文件
         },
         mappings = {
           toggle = {
-            default = "<C-a>",
+            default = "<leader>at",
           },
         },
         provider = "qwen",
@@ -70,6 +75,15 @@ require('packer').startup(function(use)
               temperature = 0.75,
               max_tokens = 20480,
             },
+          },
+        },
+        windows = {
+          width = 40,
+          input = {
+            height = 12, -- Height of the input window in vertical layout
+          },
+          selected_files = {
+            height = 12, -- Maximum height of the selected files window
           },
         },
       })
