@@ -1,4 +1,5 @@
 vim.cmd[[source ~/.vimrc]]
+-- 插件位置 ~/.local/share/nvim/site/pack/packer/start/
 
 -- 只有在第一次启动时才自动安装 packer.nvim（可选）
 local ensure_packer = function()
@@ -19,14 +20,7 @@ require('packer').startup(function(use)
   -- 必须：这是 packer 的核心
   use 'wbthomason/packer.nvim'
 
-  use {
-    'neovim/nvim-lspconfig',
-    config = function()
-      -- vim.lsp.enable('tsserver')  -- 启用 tsserver
-    end,
-  }
-
-    -- Required plugins
+  -- Required plugins
   use 'nvim-lua/plenary.nvim'
   use 'MunifTanjim/nui.nvim'
   use 'MeanderingProgrammer/render-markdown.nvim'
@@ -35,7 +29,7 @@ require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'nvim-tree/nvim-web-devicons' -- or use 'echasnovski/mini.icons'
   use 'HakonHarnes/img-clip.nvim'
-  use 'zbirenbaum/copilot.lua'
+  -- use 'zbirenbaum/copilot.lua'
   use 'stevearc/dressing.nvim' -- for enhanced input UI
   use 'folke/snacks.nvim' -- for modern input UI
 
@@ -47,30 +41,28 @@ require('packer').startup(function(use)
     config = function()
       require('avante').setup({
         behaviour = {
-          auto_suggestions = false,  -- 启用自动建议功能
+          -- auto_suggestions = true,  -- 启用自动建议功能
           auto_suggestions_respect_ignore = true,  -- 尊重.gitignore文件
         },
         mappings = {
-          suggestion = {
-            accept = "<c-l>",     -- 接受建议
-            next = "<c-a>",       -- 下一个建议
-            prev = "<c-b>",       -- 上一个建议
-          }
+          toggle = {
+            default = "<C-a>",
+          },
         },
-        -- model = 'openai',
-        -- provider = "qianwen",
-        provider = "copilot",
+        provider = "qwen",
+        -- provider = "copilot",
         providers = {
-          qianwen = {
+          qwen = {
             __inherited_from = "openai",
             endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
             model = "qwen3-coder-plus",
-            -- model = "gpt-4o-2024-11-20",
+            api_key_name = "DASHSCOPE_API_KEY",
+            -- proxy = 'http://127.0.0.1:8080',
           },
           copilot = {
             endpoint = "https://api.githubcopilot.com",
             model = "gpt-4o-2024-11-20",
-            proxy = nil, -- [protocol://]host[:port] Use this proxy
+            -- proxy = 'http://127.0.0.1:8080',
             allow_insecure = false, -- Allow insecure server connections
             timeout = 30000, -- Timeout in milliseconds
             context_window = 64000, -- Number of tokens to send to the model for context

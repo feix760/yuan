@@ -42,7 +42,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'vim-scripts/actionscript.vim'
 Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'jasonshell/vim-svg-indent'
-Plugin 'github/copilot.vim'
+Plugin 'git@github.com:feix760/copilot.vim.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -56,7 +56,6 @@ let g:NERDTreeRespectWildIgnore = 1
 
 let g:jsx_ext_required = 0
 
-set formatoptions-=r formatoptions-=o
 set completeopt-=preview
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
@@ -64,12 +63,18 @@ let g:ycm_auto_trigger = 0
 let g:ycm_auto_hover = ''
 let g:ycm_key_invoke_completion = '<C-N>'
 let g:ycm_always_populate_location_list = 1
+let g:ycm_filetype_blacklist = {
+    \ 'json': 1,
+    \ }
 " let g:ycm_show_diagnostics_ui = 0
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsSnippetDirectories = [
+    \ '~/.vim/UltiSnips'
+\]
 
 let g:autoformat_verbosemode = 1
 let g:formatters_javascript = ['jsbeautify_javascript']
@@ -169,15 +174,6 @@ set novisualbell
 set t_vb=
 set tm=500
 set fileencodings=utf-8,gbk,big5
-
-function! SetColorcolumn()
-  set colorcolumn=101
-  if stridx(&filetype, 'Avante') == 0
-    set colorcolumn=100000
-  endif
-  highlight colorcolumn ctermbg=red ctermfg=white
-endfunction
-au WinEnter * call SetColorcolumn()
 
 au BufEnter *.js,*.jsx,*.html,*.scss,*.less,*.tpl,*.vue,*.ts,*.tsx,*.xml,*.exml match ExtraWhitespace /\s\+$/
 hi ExtraWhitespace ctermbg=red guibg=red
@@ -314,4 +310,5 @@ set wildignore+=*/app/web/node_modules/*
 " ino <c-]> <Plug>(copilot-next)
 " ino <c-[> <Plug>(copilot-previous)
 
-nn <c-a> :AvanteToggle<cr>
+set mouse=
+au BufEnter * set formatoptions=cqj
