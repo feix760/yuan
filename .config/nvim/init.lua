@@ -1,6 +1,5 @@
 vim.cmd[[source ~/.vimrc]]
 -- 插件位置 ~/.local/share/nvim/site/pack/packer/start/
--- 将这个文件的fs模块去除
 
 -- 只有在第一次启动时才自动安装 packer.nvim（可选）
 local ensure_packer = function()
@@ -24,7 +23,14 @@ require('packer').startup(function(use)
   -- Required plugins
   use 'nvim-lua/plenary.nvim'
   use 'MunifTanjim/nui.nvim'
-  use 'MeanderingProgrammer/render-markdown.nvim'
+  use({
+    'MeanderingProgrammer/render-markdown.nvim',
+    config = function()
+      require('render-markdown').setup({
+        enabled = false,
+      })
+    end,
+  })
 
   -- Optional dependencies
   use 'hrsh7th/nvim-cmp'
@@ -59,9 +65,12 @@ require('packer').startup(function(use)
         providers = {
           qwen = {
             __inherited_from = "openai",
-            endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            -- endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            -- api_key_name = "DASHSCOPE_API_KEY",
+            endpoint = "https://idealab.alibaba-inc.com/api/openai/v1",
+            api_key_name = "IDEALAB_API_KEY",
             model = "qwen3-coder-plus",
-            api_key_name = "DASHSCOPE_API_KEY",
+            -- disable_tools = true,
             -- proxy = 'http://127.0.0.1:8080',
           },
           copilot = {

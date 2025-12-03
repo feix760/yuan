@@ -1,0 +1,40 @@
+diff --git a/lua/avante/providers/openai.lua b/lua/avante/providers/openai.lua
+index 5e5f3c4..28ad75d 100644
+--- a/lua/avante/providers/openai.lua
++++ b/lua/avante/providers/openai.lua
+@@ -302,6 +302,17 @@ function M:parse_messages(opts)
+     table.insert(final_messages, message)
+   end)
+ 
++  for _, message in ipairs(final_messages) do
++    if message.tool_calls then
++      for _, tool_call in ipairs(message.tool_calls) do
++        if tool_call["function"] and tool_call["function"].arguments == "[]" then
++          Utils.debug('替换', tool_call)
++          tool_call["function"].arguments = "{}"
++        end
++      end
++    end
++  end
++
+   return final_messages
+ end
+ 
+diff --git a/lua/avante/utils/init.lua b/lua/avante/utils/init.lua
+index ee89d28..84f7009 100644
+--- a/lua/avante/utils/init.lua
++++ b/lua/avante/utils/init.lua
+@@ -1417,11 +1417,10 @@ function M.icons_enabled() return M.has("nvim-web-devicons") or M.has("mini.icon
+ ---@param utf8_fallback string|nil
+ ---@return string
+ function M.icon(string_with_icon, utf8_fallback)
+-  if M.icons_enabled() then
++  if string_with_icon:match("^[🤔✅❌🔄]") then
+     return string_with_icon
+-  else
+-    return utf8_fallback or ""
+   end
++  return utf8_fallback or ""
+ end
+ 
+ function M.deep_extend_with_metatable(behavior, ...)
